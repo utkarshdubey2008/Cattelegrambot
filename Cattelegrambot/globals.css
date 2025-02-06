@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add these responsive utilities */
+@layer utilities {
+  .container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      max-width: 640px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      max-width: 768px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1024px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 1280px;
+    }
+  }
+}
+
+:root {
+  --primary: #3b82f6;
+  --secondary: #f3f4f6;
+  --accent: #1e40af;
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --background: #ffffff;
+}
+
+body {
+  background-color: var(--background);
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  width: 100%;
+  overflow-x: hidden;
+  color: var(--text-primary);
+}
+
+/* Update the search input styles */
+.search-input {
+  @apply text-sm sm:text-base;
+  background: white;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+/* Update the ebook card styles */
+.ebook-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.ebook-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+@media (max-width: 640px) {
+  .grid {
+    gap: 0.75rem;
+  }
+
+  .card {
+    touch-action: manipulation;
+  }
+}
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideInFromBottom {
+  animation: slideInFromBottom 0.5s ease-in-out;
+}
+
+/* Add custom styles for buttons */
+.btn {
+  @apply font-bold py-2 px-4 rounded transition duration-300;
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 text-gray-800 hover:bg-gray-300;
+}
+
+/* Add styles for section headings */
+.section-heading {
+  @apply text-3xl font-bold text-center mb-8 text-gray-800;
+}
+
+/* Add styles for testimonial cards */
+.testimonial-card {
+  @apply bg-white p-6 rounded-lg shadow-md;
+}
+
+/* Add styles for feature icons */
+.feature-icon {
+  @apply w-16 h-16 mx-auto mb-4 text-blue-600;
+}
+
+.from-green-600 {
+  --tw-gradient-from: #059669;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(5 150 105 / 0));
+}
+
+.via-green-500 {
+  --tw-gradient-stops: var(--tw-gradient-from), #10b981, var(--tw-gradient-to, rgb(16 185 129 / 0));
+}
+
+.to-green-600 {
+  --tw-gradient-to: #059669;
+}
+
+.from-gray-900 {
+  --tw-gradient-from: #111827;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(17 24 39 / 0));
+}
+
+.via-gray-700 {
+  --tw-gradient-stops: var(--tw-gradient-from), #374151, var(--tw-gradient-to, rgb(55 65 81 / 0));
+}
+
+.to-gray-900 {
+  --tw-gradient-to: #111827;
+}
+
+/* Custom styles for consistency */
+.btn-primary {
+  @apply bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-300;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded hover:bg-gray-300 transition duration-300;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-lg overflow-hidden;
+}
+
+.section-title {
+  @apply text-3xl font-bold text-center mb-8 text-gray-800;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.5s ease-out;
+}
+
+/* Improved focus styles for accessibility */
+:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Responsive font sizes */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1025px) {
+  html {
+    font-size: 18px;
+  }
+}
+
